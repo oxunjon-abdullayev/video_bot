@@ -1,5 +1,5 @@
 from . import help
+from . import admin
+from . import customer
 from . import start
-from . import settings
-from . import feedback_user
 from . import echo

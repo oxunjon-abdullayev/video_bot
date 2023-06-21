@@ -1,6 +1,5 @@
 from aiogram import types
 
-from keyboards.default.matsarenno_default_button import order_default_button
 from keyboards.inline.matsarenno_inline_button import inline_main_button, asosiy_menu
 from loader import dp
 from states.matsarenno_state import FeedbackState
@@ -31,6 +30,10 @@ async def about_us(callback:types.CallbackQuery):
         await FeedbackState.feedback.set()
 
 
-    elif callback.data == "order":
-        await callback.message.answer(text='Buyurtma turini tanlang ',
-                                      reply_markup=order_default_button())
+    elif callback.data =="order":
+        await callback.message.answer_photo(photo='https://www.shutterstock.com/image-vector/fast-food-menu-on-white-260nw-1476235628.jpg',
+                                            caption = "Bizning maqsadimiz mijozlarni sifatli ,\n tez va mazali fast-foodlar bilan ta'minlashdir!\n\n"
+                                                      "<em><b>Bizning telefon raqam :</b></em> <b><em> +998909890234\n\n </em></b>"
+                                                  "<em><b>Bizning telefon raqam :</em> <b><em> +998909890234\n </em></b>",reply_markup=asosiy_menu()
+                                            )
+

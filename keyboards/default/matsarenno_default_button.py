@@ -1,13 +1,23 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 
-def order_default_button():
-    rkm = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    btn = KeyboardButton("🚚   Yetkazib  berish")
-    btn2 = KeyboardButton("🚶  Borib olish")
-    btn3 = KeyboardButton('⬅️ Ortga')
-    rkm.add(btn, btn2, btn3)
+def cancel_default_button() :
+    rkm = ReplyKeyboardMarkup(resize_keyboard=True,
+                              one_time_keyboard=True)
+    button = KeyboardButton(text="cancel")
+    rkm.add(button)
     return rkm
+
+
+def update_cancel() :
+    rkm = ReplyKeyboardMarkup(resize_keyboard=True,
+                              one_time_keyboard=True)
+    button = KeyboardButton(text="⬅️ cancel")
+    rkm.add(button)
+    return rkm
+
+
+
 
 
 
