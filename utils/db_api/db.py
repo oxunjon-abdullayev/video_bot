@@ -70,7 +70,7 @@ class Database:
 
     def add_product(self, title, description, video, category_id):
         self.cursor.execute("""
-            insert into product (title,description,  video,category_id)
+            insert into product (title,description,  video, category_id)
             values (?,?,?,?)
         """, (title, description, video, category_id))
         self.connection.commit()

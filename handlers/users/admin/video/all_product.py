@@ -14,7 +14,7 @@ async def all_user(callback: types.CallbackQuery, state: FSMContext):
     if callback.data != "back":
         await callback.bot.send_video(chat_id=callback.message.chat.id, video=user[3],
                                       caption=f"📽️   <b>Video nomi  :</b> {user[1]}\n\n"
-                                              f"📽️  <b>  Video ta'rifi  :</b> {user[2]}\n\n</b>",
+                                              f"📽️  <b>  Video ta'rifi  :</b> {user[2]}\n\n",
                                       reply_markup=cancel_product_button())
         await state.finish()
     elif callback.data == "back":

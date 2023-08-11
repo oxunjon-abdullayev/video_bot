@@ -1,6 +1,7 @@
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 
+from data.config import ADMINS
 from keyboards.default.my_default_button import main_default_button
 from keyboards.inline.my_inline_button import inline_main_button
 from loader import dp
@@ -8,7 +9,7 @@ from loader import dp
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
-    if message.from_user.id == 627239525:
+    if str(message.from_user.id) in ADMINS:
         await message.answer(text="Admin xush kelibsiz !")
         await message.answer(text='Asosiy menu',
                              reply_markup=main_default_button())

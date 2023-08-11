@@ -4,9 +4,8 @@ from aiogram.dispatcher.filters.state import StatesGroup, State
 class AddProductState(StatesGroup):
     title = State()
     description = State()
-    video = State()
     category_id = State()
-
+    video = State()
 
 class EditProductState(StatesGroup):
     id = State()
